@@ -1,0 +1,16 @@
+create table student(
+id SERIAL NOT NULL PRIMARY KEY,
+first_name varchar(255) NOT NULL,
+last_name varchar (255) NOT NULL,
+admission bool NOT NULL
+);
+
+create table college(
+id SERIAL NOT NULL PRIMARY KEY,
+name varchar(255) NOT NULL,
+student_id int,
+	
+CONSTRAINT student_fk FOREIGN KEY (student_id) REFERENCES student (id)
+);
+
+
